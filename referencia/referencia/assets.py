@@ -1,6 +1,6 @@
 import pygame
 import os
-from config import METEOR_WIDTH, METEOR_HEIGHT, SHIP_WIDTH, SHIP_HEIGHT, IMG_DIR, SND_DIR, FNT_DIR
+from config import METEOR_WIDTH, METEOR_HEIGHT, METEOR2_WIDTH, METEOR2_HEIGHT, SHIP_WIDTH, SHIP_HEIGHT, IMG_DIR, SND_DIR, FNT_DIR
 
 
 BACKGROUND = 'background'
@@ -21,7 +21,7 @@ PEW_SOUND = 'pew_sound'
 def load_assets():
     assets = {}
     assets[BACKGROUND] = pygame.image.load(os.path.join(IMG_DIR, 'starfield.png')).convert()
-    assets[METEOR2_IMG] = pygame.image.load(os.path.join(IMG_DIR, 'meteorBrown_med1.png')).convert_alpha()
+    assets[METEOR2_IMG] = pygame.image.load(os.path.join(IMG_DIR, 'meteorGreen_med1.png')).convert_alpha()
     assets[METEOR2_IMG] = pygame.transform.scale(assets['meteor2_img'], (METEOR2_WIDTH, METEOR2_HEIGHT))
     assets[METEOR_IMG] = pygame.image.load(os.path.join(IMG_DIR, 'meteorBrown_med1.png')).convert_alpha()
     assets[METEOR_IMG] = pygame.transform.scale(assets['meteor_img'], (METEOR_WIDTH, METEOR_HEIGHT))

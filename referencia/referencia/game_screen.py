@@ -1,7 +1,7 @@
 import pygame
 from config import FPS, WIDTH, HEIGHT, BLACK, YELLOW, RED
 from assets import load_assets, DESTROY_SOUND, BOOM_SOUND, BACKGROUND, SCORE_FONT
-from sprites import Ship, Meteor, Bullet, Explosion
+from sprites import Ship, Meteor, Bullet, Explosion, Meteor2
 
 
 def game_screen(window):
@@ -23,11 +23,14 @@ def game_screen(window):
     player = Ship(groups, assets)
     all_sprites.add(player)
     # Criando os meteoros
-    for i in range(8):
+    for i in range(6):
         meteor = Meteor(assets)
         all_sprites.add(meteor)
         all_meteors.add(meteor)
-
+    for i in range(3):
+        meteor = Meteor2(assets)
+        all_sprites.add(meteor)
+        all_meteors.add(meteor)
     DONE = 0
     PLAYING = 1
     EXPLODING = 2
