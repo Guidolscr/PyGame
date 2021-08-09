@@ -1,3 +1,4 @@
+from referencia.referencia.config import IMG_DIR
 import pygame
 import random
 from os import path
@@ -10,10 +11,10 @@ def end_screen(screen):
     # Variável para o ajuste de velocidade
     clock = pygame.time.Clock()
     pygame.mixer.init()
-    background = pygame.image.load('starfield - Copia.png').convert()
+    background = pygame.image.load(path. join(IMG_DIR , 'starfield - Copia.png')).convert()
     background = pygame.transform.scale(background, (WIDTH, HEIGHT))
     background_rect = background.get_rect()
-    score_font = pygame.font.Font('PressStart2P.ttf', 28)
+    score_font = pygame.font.Font('assets/font/PressStart2P.ttf', 28)
 
     with open('score.txt', 'r') as arquivo:
         score = arquivo.read() # Obtem a pontuação que o jogo obteve, está que ficou salva no arquivo indicado
