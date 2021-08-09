@@ -11,6 +11,8 @@ HEIGHT = 600 # Altura da tela
 FPS = 60 # Frames por segundo
 
 # Define tamanhos
+METEOR2_HEIGHT= 55
+METEOR2_WIDTH= 40
 METEOR_WIDTH = 50
 METEOR_HEIGHT = 38
 SHIP_WIDTH = 50
