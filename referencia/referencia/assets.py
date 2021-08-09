@@ -29,6 +29,8 @@ def load_assets():
     assets[SHIP_IMG] = pygame.transform.scale(assets['ship_img'], (SHIP_WIDTH, SHIP_HEIGHT))
     assets[BULLET_IMG] = pygame.image.load(os.path.join(IMG_DIR, 'laserRed16.png')).convert_alpha()
     explosion_anim = []
+    meteor1= []
+    meteor2= []
     for i in range(9):
         # Os arquivos de animação são numerados de 00 a 08
         filename = os.path.join(IMG_DIR, 'regularExplosion0{}.png'.format(i))
@@ -37,7 +39,20 @@ def load_assets():
         explosion_anim.append(img)
     assets[EXPLOSION_ANIM] = explosion_anim
     assets[SCORE_FONT] = pygame.font.Font(os.path.join(FNT_DIR, 'PressStart2P.ttf'), 28)
+    for i in range(4):
+        filename = os.path.join(IMG_DIR, 'meteorBrown_med{}.png'.format(i))
+        img = pygame.image.load(filename).convert()
+        img = pygame.transform.scale(img, (50, 38))
+        meteor1.append(img)
+    assets[meteor1]
 
+
+    for i in range(4):
+        filename = os.path.join(IMG_DIR, 'meteorGreen_med{}.png'.format(i))
+        img = pygame.image.load(filename).convert()
+        img = pygame.transform.scale(img, (55, 40))
+        meteor2.append(img)
+    assets[meteor2]
     # Carrega os sons do jogo
     pygame.mixer.music.load(os.path.join(SND_DIR, 'tgfcoder-FrozenJam-SeamlessLoop.ogg'))
     pygame.mixer.music.set_volume(0.4)
