@@ -61,18 +61,33 @@ class Meteor(pygame.sprite.Sprite):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = assets[METEOR_IMG]
-        self.mask = pygame.mask.from_surface(self.image)
+        self.Meteor1 = assets[METEOR_IMG]
+        self.frame= 0
+        self.image = self.Meteor1[self.frame]
         self.rect = self.image.get_rect()
+        self.last_update = pygame.time.get_ticks()
+        self.frame_ticks = 50
         self.rect.x = random.randint(0, WIDTH-METEOR_WIDTH)
         self.rect.y = random.randint(-100, -METEOR_HEIGHT)
         self.speedx = random.randint(-3, 3)
         self.speedy = random.randint(2, 9)
 
     def update(self):
+        now = pygame.time.get_ticks()
+        elapsed_ticks = now - self.last_update
         # Atualizando a posição do meteoro
         self.rect.x += self.speedx
         self.rect.y += self.speedy
+        if elapsed_ticks > self.frame_ticks:
+            # Marca o tick da nova imagem.
+            self.last_update = now
+
+            # Avança um quadro.
+            self.frame += 1
+            self.image= self.Meteor1[self.frame]
+            if self.frame == 3:
+                self.frame = 0
+
         # Se o meteoro passar do final da tela, volta para cima e sorteia
         # novas posições e velocidades
         if self.rect.top > HEIGHT or self.rect.right < 0 or self.rect.left > WIDTH:
@@ -85,18 +100,34 @@ class Meteor2(pygame.sprite.Sprite):
         # Construtor da classe mãe (Sprite).
         pygame.sprite.Sprite.__init__(self)
 
-        self.image = assets[METEOR2_IMG]
-        self.mask = pygame.mask.from_surface(self.image)
+        self.Meteor2 = assets[METEOR2_IMG]
+        self.frame= 0
+        self.image = self.Meteor2[self.frame]
         self.rect = self.image.get_rect()
+        self.last_update = pygame.time.get_ticks()
+        self.frame_ticks = 400
         self.rect.x = random.randint(0, WIDTH-METEOR2_WIDTH)
         self.rect.y = random.randint(-100, -METEOR2_HEIGHT)
         self.speedx = random.randint(-3, 3)
         self.speedy = random.randint(2, 9)
 
     def update(self):
+        now = pygame.time.get_ticks()
+        elapsed_ticks = now - self.last_update
         # Atualizando a posição do meteoro
         self.rect.x += self.speedx
         self.rect.y += self.speedy
+        if elapsed_ticks > self.frame_ticks:
+            # Marca o tick da nova imagem.
+            self.last_update = now
+            
+
+            # Avança um quadro.
+            self.frame += 1
+            self.image= self.Meteor2[self.frame]
+            if self.frame == 3:
+                self.frame = 0
+
         # Se o meteoro passar do final da tela, volta para cima e sorteia
         # novas posições e velocidades
         if self.rect.top > HEIGHT or self.rect.right < 0 or self.rect.left > WIDTH:
