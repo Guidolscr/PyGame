@@ -55,7 +55,7 @@ class Ship(pygame.sprite.Sprite):
             self.groups['all_sprites'].add(new_bullet)
             self.groups['all_bullets'].add(new_bullet)
             self.assets[PEW_SOUND].play()
-
+#METEORO VERDE
 class Meteor(pygame.sprite.Sprite):
     def __init__(self, assets):
         # Construtor da classe mãe (Sprite).
@@ -95,6 +95,7 @@ class Meteor(pygame.sprite.Sprite):
             self.rect.y = random.randint(-100, -METEOR_HEIGHT)
             self.speedx = random.randint(-3, 3)
             self.speedy = random.randint(2, 9)
+#METEORO MARROM
 class Meteor2(pygame.sprite.Sprite):
     def __init__(self, assets):
         # Construtor da classe mãe (Sprite).
