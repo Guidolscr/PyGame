@@ -1,10 +1,10 @@
+from config import RED
 import pygame
 import random
 from os import path
 
 from config import IMG_DIR, BLACK, FPS, GAME, QUIT, WIDTH, HEIGHT, FNT_DIR
-score_font = pygame.font.Font(path. join(FNT_DIR, 'PressStart2P.ttf'), 14)
-
+text_states= ['JOGO DA NAVEZINHA, JOGO DA NAVEZINHA']
 
 def init_screen(screen):
     # Variável para o ajuste de velocidade
@@ -12,14 +12,19 @@ def init_screen(screen):
 
     # Carrega o fundo da tela inicial
     background = pygame.image.load(path.join(IMG_DIR, 'inicio.png')).convert()
+    background = pygame.transform.scale(background, (WIDTH, HEIGHT))
+
     background_rect = background.get_rect()
+    clock = pygame.time.Clock()
+    font= pygame.font.SysFont(None, 16)
+    text_index=0 
+
+
 
     running = True
-    while running:
-
+    while text_index < len(text_states) and running:
         # Ajusta a velocidade do jogo.
         clock.tick(FPS)
-
         # Processa os eventos (mouse, teclado, botão, etc).
         for event in pygame.event.get():
             # Verifica se foi fechado.
@@ -30,17 +35,17 @@ def init_screen(screen):
             if event.type == pygame.KEYUP:
                 state = GAME
                 running = False
+        if text_index < len(text_states):
+            text = text_states[text_index]
+        else:
+            text= ''
+            text_image = font.render(text, True, RED)
 
         # A cada loop, redesenha o fundo e os sprites
         screen.fill(BLACK)
         screen.blit(background, background_rect)
 
-        text_surface = score_font.render("JOGO DA NAVEZINHA", True, (50, 100, 50))
-        text_rect = text_surface.get_rect()
-        text_rect.midtop = (WIDTH / 2,  (HEIGHT/2) - 10)
-        screen.blit(background, background_rect)
-        screen.blit(text_surface, text_rect)
-
+        
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
 
