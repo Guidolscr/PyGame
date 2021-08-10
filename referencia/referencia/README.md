@@ -7,5 +7,5 @@ Modificações
 4. Movimento Vertical para a Nave
 5. Animação de rotação dos meteoros
 6. Aumentar a dificuldade comforme a pontuação do jogador(aumenta a quantidade de meteoros)
-7. 
+7. Titulo piscando por duas cores
 8. 
