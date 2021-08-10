@@ -27,10 +27,6 @@ def game_screen(window):
         meteor = Meteor(assets)
         all_sprites.add(meteor)
         all_meteors.add(meteor)
-    for i in range(3):
-        meteor = Meteor2(assets)
-        all_sprites.add(meteor)
-        all_meteors.add(meteor)
     DONE = 0
     PLAYING = 1
     EXPLODING = 2
@@ -97,10 +93,19 @@ def game_screen(window):
                 explosao = Explosion(meteor.rect.center, assets)
                 all_sprites.add(explosao)
 
-                # Ganhou pontos!
+                # Ganhou pontos e aumento de dificuldade!
                 score += 100
+                e=3
+                
                 if score % 1000 == 0:
                     lives += 1
+                    e+=3
+                    for i in range(e):
+                        meteor = Meteor2(assets)
+                        all_sprites.add(meteor)
+                        all_meteors.add(meteor)
+                        
+
 
             # Verifica se houve colisão entre nave e meteoro
             hits = pygame.sprite.spritecollide(player, all_meteors, True, pygame.sprite.collide_mask)
