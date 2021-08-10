@@ -2,7 +2,8 @@ import pygame
 import random
 from os import path
 
-from config import IMG_DIR, BLACK, FPS, GAME, QUIT
+from config import IMG_DIR, BLACK, FPS, GAME, QUIT, WIDTH, HEIGHT, FNT_DIR
+score_font = pygame.font.Font(path. join(FNT_DIR, 'PressStart2P.ttf'), 14)
 
 
 def init_screen(screen):
@@ -33,6 +34,12 @@ def init_screen(screen):
         # A cada loop, redesenha o fundo e os sprites
         screen.fill(BLACK)
         screen.blit(background, background_rect)
+
+        text_surface = score_font.render("JOGO DA NAVEZINHA", True, (50, 100, 50))
+        text_rect = text_surface.get_rect()
+        text_rect.midtop = (WIDTH / 2,  (HEIGHT/2) - 10)
+        screen.blit(background, background_rect)
+        screen.blit(text_surface, text_rect)
 
         # Depois de desenhar tudo, inverte o display.
         pygame.display.flip()
