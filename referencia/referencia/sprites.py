@@ -86,7 +86,7 @@ class Meteor(pygame.sprite.Sprite):
             self.frame += 1
             self.image= self.Meteor1[self.frame]
             if self.frame == 3:
-                self.frame = 0
+                self.frame = -1
 
         # Se o meteoro passar do final da tela, volta para cima e sorteia
         # novas posições e velocidades
@@ -120,13 +120,12 @@ class Meteor2(pygame.sprite.Sprite):
         if elapsed_ticks > self.frame_ticks:
             # Marca o tick da nova imagem.
             self.last_update = now
-            
-
-            # Avança um quadro.
             self.frame += 1
+
             self.image= self.Meteor2[self.frame]
+            # Avança um quadro.
             if self.frame == 3:
-                self.frame = 0
+                self.frame = -1
 
         # Se o meteoro passar do final da tela, volta para cima e sorteia
         # novas posições e velocidades
