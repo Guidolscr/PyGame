@@ -1,10 +1,11 @@
+from referencia.referencia.config import TEST
 from config import RED
 import pygame
 import random
 from os import path
 from itertools import cycle
 
-from config import IMG_DIR, BLACK, FPS, GAME, QUIT, WIDTH, HEIGHT, FNT_DIR
+from config import IMG_DIR, BLACK, FPS, GAME, QUIT, WIDTH, HEIGHT, FNT_DIR, TEST
 text_states= ['JOGO DA NAVEZINHA', 'JOGO DA NAVEZINHA']
 BLINK_EVENT = pygame.USEREVENT + 0
 
@@ -44,7 +45,7 @@ def init_screen(screen):
                 running = False
 
             if event.type == pygame.KEYUP:
-                state = GAME
+                state = TEST
                 running = False
 
             if event.type == BLINK_EVENT:
