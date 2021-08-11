@@ -1,4 +1,4 @@
-from referencia.referencia.config import TEST
+
 from config import RED
 import pygame
 import random

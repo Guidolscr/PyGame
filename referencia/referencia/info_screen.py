@@ -25,9 +25,8 @@ def teste_screen(windown):
                 running = False
 
             if event.type == pygame.KEYUP:
-                if event.key == pygame.KEYUP:  #Começa o jogo
-                    state = INIT
-                    running = False
+                state = GAME
+                running = False
     
 
 

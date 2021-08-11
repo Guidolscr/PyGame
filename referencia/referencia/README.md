@@ -8,4 +8,4 @@ Modificações
 5. Animação de rotação dos meteoros
 6. Aumentar a dificuldade comforme a pontuação do jogador(aumenta a quantidade de meteoros)
 7. Titulo piscando por duas cores
-8. 
+8. Tela de informações sobre as teclas
