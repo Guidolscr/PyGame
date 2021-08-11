@@ -1,4 +1,5 @@
 # JOGO DA NAVEZINHA
+- Guido Lacerda Soares do Couto Rosa
 Projeto Pygame 1semestre
 Modificações
 # Segundo Meteoro que tira duas vidas
@@ -10,10 +11,11 @@ Modificações
 # Movimento Vertical para a Nave
 - Essa modificação traz acesso da nave a qualquer parte da tela.
 # Animação de rotação dos meteoros
-- Apenas uma melhoria na estetica dos meteoros verde e marrom.
+- Apenas uma melhoria na estetica dos meteoros verde e marrom. Foi feita atraves de imagens dentro de uma lista.
 # Aumentar a dificuldade comforme a pontuação do jogador(aumenta a quantidade de meteoros)
 - Incluida para deixar o jogo mais divertido e não ficar na mesma dificuldade, é feita atraves da adição de mais meteoros verdes a cada 1000 pontos do jogador.
 # Titulo piscando por duas cores
-- Incluida apenas para melhoria estetica
+- Incluida apenas para melhoria estetica, pisca entre as cores verde e azul.
+- Baseada em um codigo da internet, este é o link para acessar. https://living-sun.com/pt/python/720691-flashing-text-in-pygame-python-text-pygame.html
 # Tela de informações sobre as teclas
-- Uma tela entre o titulo do jogo e o jogo em si, para informar as teclas utilizadas pelo jogador.
+- Uma tela entre o titulo do jogo e o jogo em si, para informar as teclas utilizadas pelo jogador. Apenas incluindo mais uma tela no codigo.
