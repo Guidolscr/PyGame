@@ -5,7 +5,7 @@ WIDTH = 480
 HEIGHT = 600
 from config import GAME, QUIT, INIT, IMG_DIR, FNT_DIR
 
-def teste_screen(screen):
+def teste_screen(windown):
     clock = pygame.time.Clock()
     pygame.mixer.init()
     background = pygame.image.load(path. join(IMG_DIR , 'Infos.png')).convert()
@@ -31,7 +31,7 @@ def teste_screen(screen):
     
 
 
-        screen.blit(background, background_rect)
+        windown.blit(background, background_rect)
         pygame.display.flip()
 
     return state
