@@ -1,7 +1,7 @@
 # JOGO DA NAVEZINHA
 - Guido Lacerda Soares do Couto Rosa
-Projeto Pygame 1semestre
-Modificações
+- Projeto Pygame 1semestre
+- Modificações
 # Segundo Meteoro que tira duas vidas
 - Existem dois tipos de meteoros, sendo eles, o verde e o marrom. O verde é apenas um meteoro normal que tira uma vida do player e existe durante todo jogo, já o marrom entra quando o jogador faz 1000 pontos(adiquiridos atraves da destruição do meteoro utilizando a barra de espaço), se nave bater nesse tipo de meteoro retira duas vidas do jogador.
 # Tela de game over para mostrar a pontuação final do jogador
